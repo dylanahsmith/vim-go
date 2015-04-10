@@ -115,7 +115,7 @@ function! go#tool#BinPath(binpath)
     " check if we have an appropriate bin_path
     let go_bin_path = GetBinPath()
     if empty(go_bin_path)
-        echo "vim-go: could not find '" . basename . "'. Run :GoInstallBinaries to fix it."
+        "echo "vim-go: could not find '" . basename . "'. Run :GoInstallBinaries to fix it."
         return ""
     endif
 
@@ -125,7 +125,7 @@ function! go#tool#BinPath(binpath)
     let $PATH = $PATH . PathSep() .go_bin_path
 
     if !executable(basename)
-        echo "vim-go: could not find '" . basename . "'. Run :GoInstallBinaries to fix it."
+        "echo "vim-go: could not find '" . basename . "'. Run :GoInstallBinaries to fix it."
         " restore back!
         let $PATH = old_path
         return ""
